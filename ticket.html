@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Ticket | Coding Conf</title>
+
+    <!-- External Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Main Navigation -->
+    <nav aria-label="Main Navigation">
+        <ul>
+            <li>
+                <a href="index.html">Home</a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Main Page Content -->
+    <main>
+
+        <!-- Ticket Confirmation Banner -->
+        <section class="ticket-banner">
+
+            <!-- Conference Logo -->
+            <img
+                class="logo-full"
+                src="assets/logo-full.svg"
+                alt="Coding Conf Logo">
+
+            <!-- Dynamic Confirmation Heading -->
+            <h1>
+                Congrats,
+                <span id="ticketNameHeading"></span>!
+                <br>
+                Your ticket is ready.
+            </h1>
+
+            <!-- Dynamic Email Confirmation Message -->
+            <p>
+                We've emailed your ticket to
+                <span id="ticketEmail"></span>
+                and will send updates in the run up to the event.
+            </p>
+
+        </section>
+
+        <!-- Digital Ticket -->
+        <section class="ticket-section">
+
+            <div class="ticket">
+
+                <!-- Ticket Information Side -->
+                <div class="ticket-left">
+
+                    <!-- Conference Branding -->
+                    <div class="ticket-brand">
+
+                        <img
+                            class="logo-mark"
+                            src="assets/logo-mark.svg"
+                            alt="Coding Conf Logo">
+
+                        <div>
+                            <h3>Coding Conf</h3>
+
+                            <p>
+                                Jan 31, 2026 / Kingston, Jamaica
+                            </p>
+                        </div>
+
+                    </div>
+
+                    <!-- Attendee Information -->
+                    <div class="ticket-user">
+
+                        <!-- Dynamic User Avatar -->
+                        <img
+                            id="ticketAvatar"
+                            src="assets/image-avatar.jpg"
+                            alt="Conference Attendee Avatar">
+
+                        <div class="ticket-user-info">
+
+                            <!-- Dynamic Attendee Name -->
+                            <h4 id="ticketName"></h4>
+
+                            <!-- GitHub Account Information -->
+                            <div class="github-row">
+
+                                <img
+                                    src="assets/icon-github.svg"
+                                    alt="GitHub Icon">
+
+                                <span id="ticketGithub"></span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Ticket Number Section -->
+                <div class="ticket-right">
+
+                    <!-- Dynamic Ticket Number -->
+                    <span id="ticketNumber">
+                        #00000
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Coding Conf</p>
+    </footer>
+
+    <!-- Ticket Generation Script -->
+    <script src="ticket.js"></script>
+
+    <!-- Decorative Background Circle -->
+    <img
+        class="pattern-circle"
+        src="assets/images/pattern-circle.svg"
+        alt="">
+
+</body>
+
+</html>

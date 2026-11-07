@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register | Coding Conf</title>
+
+    <!-- External Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Page Header -->
+    <header>
+        <h1>Coding Conf Registration</h1>
+    </header>
+
+    <!-- Main Navigation -->
+    <nav aria-label="Main Navigation">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main Content -->
+    <main>
+
+        <!-- Registration Form Section -->
+        <section class="form-section">
+
+            <h2>Reserve Your Spot</h2>
+
+            <!-- Conference Registration Form -->
+            <form id="registerForm">
+
+                <!-- Full Name Input -->
+                <label for="fullname">Full Name</label>
+
+                <input
+                    type="text"
+                    id="fullname"
+                    name="fullname"
+                    placeholder="Enter your full name"
+                    required>
+
+                <small id="nameError"></small>
+
+                <!-- Email Input -->
+                <label for="email">Email Address</label>
+
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder="example@email.com"
+                    required>
+
+                <small id="emailError"></small>
+
+                <!-- GitHub Username Input -->
+                <label for="github">GitHub Username</label>
+
+                <input
+                    type="text"
+                    id="github"
+                    name="github"
+                    placeholder="@username"
+                    required>
+
+                <small id="githubError"></small>
+
+                <!-- Profile Picture Upload -->
+                <label for="avatar">Profile Picture</label>
+
+                <input
+                    type="file"
+                    id="avatar"
+                    name="avatar"
+                    accept=".jpg,.jpeg,.png"
+                    required>
+
+                <small id="avatarError"></small>
+
+                <!-- Form Submission Button -->
+                <button type="submit">
+                    Generate My Ticket
+                </button>
+
+            </form>
+
+        </section>
+
+    </main>
+
+    <!-- Page Footer -->
+    <footer>
+        <p>&copy; 2026 Coding Conf</p>
+    </footer>
+
+    <!-- Form Validation Script -->
+    <script src="validation.js"></script>
+
+</body>
+
+</html>

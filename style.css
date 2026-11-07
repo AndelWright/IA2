@@ -1,0 +1,486 @@
+/* Site colour variables used throughout the website */
+:root {
+    --primary: #8b5cf6;
+    --secondary: #ec4899;
+    --dark: #0f0326;
+    --light: #fff;
+}
+
+/* Removes default browser spacing and makes sizing easier to manage */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Main page styling and animated background */
+body {
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    padding: 20px;
+    color: var(--light);
+    position: relative;
+    overflow-x: hidden;
+
+    background:
+        radial-gradient(circle at top, rgba(139,92,246,.4), transparent 35%),
+        radial-gradient(circle at bottom right, rgba(236,72,153,.25), transparent 30%),
+        radial-gradient(white 1px, transparent 1px),
+        radial-gradient(white 1px, transparent 1px),
+        linear-gradient(135deg, #090014, #14052d, #1f1147, #0b021d);
+
+    background-size:
+        auto,
+        auto,
+        80px 80px,
+        120px 120px,
+        auto;
+
+    background-position:
+        center,
+        center,
+        0 0,
+        40px 40px,
+        center;
+
+    background-attachment: fixed;
+}
+
+/* Decorative SVG background graphics */
+body::before,
+body::after {
+    content: "";
+    position: fixed;
+    background-repeat: no-repeat;
+    background-size: contain;
+    opacity: .8;
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Top decoration */
+body::before {
+    top: 0;
+    right: 0;
+    width: 320px;
+    height: 220px;
+    background-image: url("assets/pattern-squiggly-line-top.svg");
+}
+
+/* Bottom decoration */
+body::after {
+    left: 0;
+    bottom: 0;
+    width: 750px;
+    height: 250px;
+    background-image: url("assets/pattern-squiggly-line-bottom-desktop.svg");
+}
+
+/* Keeps content above decorative graphics */
+main,
+header,
+nav,
+footer,
+.ticket-banner,
+.ticket-section {
+    position: relative;
+    z-index: 1;
+}
+
+/* Responsive heading sizes */
+h1 {
+    font-size: clamp(2rem, 5vw, 4rem);
+}
+
+h2 {
+    font-size: clamp(1.5rem, 3vw, 2.5rem);
+}
+
+/* Gradient effect for headings using :is selector */
+:is(h1, h2, h3) {
+    background: linear-gradient(90deg, #fff, #c084fc, #ec4899);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* Header section */
+header {
+    text-align: center;
+    padding: 25px;
+}
+
+/* Navigation container */
+nav {
+    margin-bottom: 30px;
+}
+
+/* Navigation menu layout */
+nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    list-style: none;
+}
+
+/* Navigation links using :where selector */
+:where(nav a) {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 16px;
+    border-radius: 10px;
+    transition: .3s ease;
+}
+
+/* Navigation hover effect */
+:where(nav a:hover) {
+    background: rgba(255,255,255,.1);
+    box-shadow: 0 0 10px #8b5cf6, 0 0 20px #8b5cf6;
+}
+
+/* Landing page hero section */
+.hero {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.hero h2 {
+    margin-bottom: 20px;
+}
+
+/* Event information list */
+.event-info {
+    list-style: none;
+    margin: 20px 0;
+}
+
+.event-info li {
+    margin: 12px 0;
+}
+
+/* Shared styling for links and buttons */
+.btn,
+button {
+    display: inline-block;
+    padding: 12px 25px;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    color: white;
+    border: none;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+/* Button hover effect */
+.btn:hover,
+button:hover {
+    transform: translateY(-3px);
+    box-shadow:
+        0 0 15px rgba(139,92,246,.7),
+        0 0 30px rgba(236,72,153,.5);
+}
+
+/* Registration form container */
+.form-section {
+    max-width: 600px;
+    margin: auto;
+    padding: 30px;
+    background: rgba(255,255,255,.08);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255,255,255,.15);
+    border-radius: 20px;
+    box-shadow:
+        0 0 20px rgba(139,92,246,.25),
+        0 0 40px rgba(236,72,153,.15);
+}
+
+.form-section h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Highlights form when an input is focused using :has selector */
+.form-section:has(input:focus) {
+    box-shadow:
+        0 0 25px rgba(139,92,246,.5),
+        0 0 50px rgba(236,72,153,.3);
+}
+
+/* Arranges form elements vertically */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Form labels */
+label {
+    font-weight: bold;
+}
+
+/* Input field styling */
+input {
+    padding: 12px;
+    color: white;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,.2);
+    background: rgba(255,255,255,.1);
+}
+
+/* Input placeholder styling */
+input::placeholder {
+    color: rgba(255,255,255,.7);
+}
+
+/* Makes text inputs fill available width using :not selector */
+input:not([type="file"]) {
+    width: 100%;
+}
+
+/* Accessibility focus indicators */
+input:focus,
+button:focus,
+a:focus {
+    outline: 3px solid white;
+    outline-offset: 3px;
+}
+
+/* Validation error messages */
+small {
+    color: #ffb3b3;
+    min-height: 20px;
+}
+
+/* Ticket page banner area */
+.ticket-banner {
+    max-width: 850px;
+    margin: 0 auto 60px;
+    text-align: center;
+}
+
+/* Conference logo */
+.logo-full {
+    width: 220px;
+    margin-bottom: 25px;
+}
+
+/* Ticket banner heading */
+.ticket-banner h1 {
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+/* Ticket banner description */
+.ticket-banner p {
+    max-width: 550px;
+    margin: 0 auto;
+    line-height: 1.6;
+    color: rgba(255,255,255,.85);
+}
+
+/* Highlight attendee email */
+#ticketEmail {
+    color: #ff8a8a;
+    font-weight: bold;
+}
+
+/* Container for ticket card */
+.ticket-section {
+    display: flex;
+    justify-content: center;
+    margin-top: 60px;
+}
+
+/* Main glassmorphism ticket */
+.ticket {
+    position: relative;
+    display: flex;
+    width: 100%;
+    max-width: 700px;
+
+    background:
+        url("assets/pattern-ticket.svg") center/cover no-repeat,
+        rgba(255,255,255,.08);
+
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255,255,255,.3);
+    border-radius: 22px;
+    overflow: hidden;
+
+    box-shadow:
+        0 0 25px rgba(139,92,246,.35),
+        0 0 50px rgba(236,72,153,.25);
+}
+
+/* Decorative ticket cut-outs */
+.ticket::before,
+.ticket::after {
+    content: "";
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    right: 75px;
+    border-radius: 50%;
+    background: var(--dark);
+}
+
+.ticket::before {
+    top: -15px;
+}
+
+.ticket::after {
+    bottom: -15px;
+}
+
+/* Left side of ticket */
+.ticket-left {
+    flex: 1;
+    padding: 25px;
+}
+
+/* Flex layouts inside ticket */
+.ticket-brand,
+.ticket-user,
+.github-row {
+    display: flex;
+    align-items: center;
+}
+
+/* Conference branding section */
+.ticket-brand {
+    gap: 15px;
+    margin-bottom: 35px;
+}
+
+/* Attendee information section */
+.ticket-user {
+    gap: 15px;
+}
+
+/* GitHub data row */
+.github-row {
+    gap: 8px;
+}
+
+/* Small conference logo */
+.logo-mark {
+    width: 42px;
+    height: 42px;
+}
+
+.ticket-brand h3 {
+    color: white;
+    margin-bottom: 5px;
+}
+
+.ticket-brand p,
+.github-row span {
+    color: rgba(255,255,255,.75);
+}
+
+/* User avatar */
+#ticketAvatar {
+    width: 85px;
+    height: 85px;
+    object-fit: cover;
+    border-radius: 12px;
+    border: 2px solid rgba(255,255,255,.3);
+}
+
+/* Attendee name styling */
+.ticket-user-info h4 {
+    color: white;
+    font-size: 1.4rem;
+    margin-bottom: 8px;
+}
+
+/* GitHub icon */
+.github-row img {
+    width: 18px;
+    height: 18px;
+}
+
+/* Ticket number column */
+.ticket-right {
+    width: 90px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-left: 2px dashed rgba(255,255,255,.25);
+}
+
+/* Rotated ticket number */
+.ticket-right span {
+    transform: rotate(90deg);
+    font-size: 1.3rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    color: rgba(255,255,255,.75);
+}
+
+/* Footer */
+footer {
+    margin-top: 50px;
+    text-align: center;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+
+    .ticket {
+        width: 95%;
+        flex-direction: column;
+    }
+
+    .ticket-right {
+        width: 100%;
+        min-height: 60px;
+        border-left: none;
+        border-top: 2px dashed rgba(255,255,255,.25);
+    }
+
+    .ticket-right span {
+        transform: none;
+    }
+
+    .ticket::before,
+    .ticket::after {
+        display: none;
+    }
+
+    .ticket-user,
+    .ticket-brand {
+        flex-direction: column;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .github-row {
+        justify-content: center;
+    }
+
+    .logo-full {
+        width: 180px;
+    }
+
+    body::before {
+        width: 180px;
+        height: 120px;
+    }
+
+    body::after {
+        width: 220px;
+        height: 180px;
+        background-image: url("assets/images/pattern-squiggly-line-bottom-mobile.svg");
+    }
+
+    .pattern-circle {
+        width: 100px;
+        right: 30px;
+    }
+}

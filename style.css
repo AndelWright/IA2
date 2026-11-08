@@ -425,7 +425,8 @@ small {
 
 /* Footer */
 footer {
-    margin-top: 50px;
+    margin-top: 60px;
+    padding-bottom: 20px;
     text-align: center;
 }
 

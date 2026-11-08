@@ -468,7 +468,12 @@ footer {
     .logo-full {
         width: 180px;
     }
-
+    .bottom-left-pattern {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+    }
     body::before {
         width: 180px;
         height: 120px;
